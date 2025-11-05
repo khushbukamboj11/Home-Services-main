@@ -18,6 +18,7 @@
     z-index: 99;
 }
 
+
 .greybg{
     background-color: var(--light);
 }
@@ -176,6 +177,19 @@
     margin-top: 5px;
   margin-right: 30px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 @media (max-width: 991px) {
   .web-logo img {
     max-height: 45px;
@@ -866,3 +880,78 @@
     height: 300px;
     object-fit: cover;
 }
+
+/* WhatsApp Floating Chat Button */
+/* WhatsApp Floating Chat Button */
+.whatsapp-chat {
+  position: fixed !important;
+  bottom: 25px !important;
+  right: 25px !important;
+  z-index: 999999 !important;
+  font-family: "Poppins", sans-serif;
+  pointer-events: auto;
+}
+
+.whatsapp-chat a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+/* WhatsApp Icon (bouncing up and down) */
+.whatsapp-chat img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #25d366;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  animation: bounceIcon 1s infinite ease-in-out;
+}
+
+/* Bounce animation (icon moves up and down every second) */
+@keyframes bounceIcon {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Tooltip (always visible + fade + bounce on load) */
+.chat-tooltip {
+  background-color: #f5b800;
+  color: #000;
+  font-weight: 600;
+  padding: 7px 12px;
+  border-radius: 8px;
+  margin-right: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateX(20px);
+  animation: fadeBounce 1.2s ease forwards;
+  animation-delay: 0.3s;
+}
+
+/* Text fade + bounce animation */
+@keyframes fadeBounce {
+  0% {
+    opacity: 0;
+    transform: translateX(20px) scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(-5px) scale(1.05);
+  }
+  70% {
+    transform: translateX(0) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+
